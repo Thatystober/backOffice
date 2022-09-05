@@ -1,7 +1,13 @@
 import React, {useState, useEffect} from 'react';
-import './server'
+
 
 export default function App() {
+    interface Movies {
+      id: number;
+      name: string;
+      year: number
+    }
+
     const[movies, setMovies] = useState([])
 
     useEffect(() => {
@@ -11,12 +17,12 @@ export default function App() {
         .catch(err => console.log(err))
     }, [])
 
+    
     return (
-      <></>
-    //   <ul>
-    //   {movies.map((movie) => (
-    //     <li key={movie.id}>{movie.name}</li>
-    //   ))}
-    // </ul>
+      <ul>
+        {movies.map((movie: Movies) => (
+          <li key={movie?.id}>{movie?.name}</li>
+        ))}
+      </ul>
     );
   }
