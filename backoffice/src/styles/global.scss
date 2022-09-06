@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$base-color: #F3F4F9;
+$primary-color: #BA58CA;
+$primary-color-hover: #B92BD0;
+$color-text: #414141;
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../assets/fonts/Roboto-Regular.ttf") format("ttf"),
+    url("../assets/fonts/Roboto-Medium.ttf") format("ttf"),
+    url("../assets/fonts/Roboto-Bold.ttf") format("ttf");
+}
+  
+
+body{
+    font-family: "Roboto", sans-serif;
+    background-color: $base-color;
+    color: $color-text;
+}
