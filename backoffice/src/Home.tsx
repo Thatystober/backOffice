@@ -1,6 +1,6 @@
 // import React, {useState, useEffect} from 'react';
 
-export default function App() {
+export default function Home() {
     // interface Movies {
     //   id: number;
     //   name: string;
@@ -18,11 +18,11 @@ export default function App() {
 
     
     return (
+      <></>
       // <ul>
       //   {movies.map((movie: Movies) => (
       //     <li key={movie?.id}>{movie?.name}</li>
       //   ))}
       // </ul>
-      <Routes/>
     );
   }
