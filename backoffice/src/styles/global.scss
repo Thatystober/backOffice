@@ -2,12 +2,16 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    font-family: "Roboto", sans-serif;
 }
 
 $base-color: #F3F4F9;
 $primary-color: #BA58CA;
 $primary-color-hover: #B92BD0;
-$color-text: #414141;
+$text-color: #414141;
+$border-color: #CCCCCC;
+$box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
 @font-face {
     font-family: "Roboto";
@@ -16,9 +20,69 @@ $color-text: #414141;
     url("../assets/fonts/Roboto-Bold.ttf") format("ttf");
 }
   
-
 body{
-    font-family: "Roboto", sans-serif;
     background-color: $base-color;
-    color: $color-text;
+    color: $text-color;
+
+    #root{
+        font-size: 1rem;
+
+        .container{
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 1700px;
+            padding-left: 15px;
+            padding-right: 15px;
+        
+            padding-right: 0.75rem;
+            padding-left: 0.75rem;
+        
+            position: relative;
+            width: 100%;
+        
+        
+            @media screen and (min-width: 320px) {
+                max-width: 300px;
+            }
+            
+            @media screen and (min-width: 421px) {                          
+                max-width: 400px;
+            }
+            
+            @media screen and (min-width: 520px) {      
+                max-width: 500px;
+            }
+            
+            @media screen and (min-width: 576px) {
+                max-width: 540px;
+            }
+            
+            @media screen and (min-width: 768px) {
+                max-width: 720px;
+            }
+            
+            @media screen and (min-width: 992px) {
+                max-width: 960px;
+            }
+            
+            @media screen and (min-width: 1200px) {
+                max-width: 1140px;
+            }
+            
+            @media screen and (min-width: 1400px) {
+                max-width: 1320px;
+            }
+            
+            @media screen and (min-width: 1700px) {
+                max-width: 1620px;
+            }
+        }
+        
+        h1{
+            margin-bottom:2rem;
+        }
+    }
 }
+
+
+

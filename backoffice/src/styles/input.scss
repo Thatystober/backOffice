@@ -1,19 +1,21 @@
 @import './global.scss';
 
 #inputComponent{
-    label{
-        .input{
-            border-top: 0;
-            border-left: 0;
-            border-right: 0;
-            border-bottom: 1px solid $color-text;
-            background: transparent;
-            padding: 0.3rem;
+    .input{
+        padding: .3rem 0;
+        color: $text-color;
+        margin-bottom: 1.2rem;
+        border: none;
+        border-bottom: 1px solid $border-color;
+        outline: none;
+        background: transparent;
+        transition: .5s;
 
-            &:focus,
-            &:focus-visible{
-                outline: none;
-            }
+        width: 100%;
+
+        &:focus,
+        &:focus-visible{
+            border-color: $primary-color;
         }
     }
 }

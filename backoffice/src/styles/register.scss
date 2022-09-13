@@ -1,0 +1,14 @@
+@import './global.scss';
+
+main{
+    #pageRegister{
+        max-width: 500px;
+        width: 100%;
+        margin:auto;
+        background-color: #fff;
+    
+        padding: 3rem;
+        box-shadow: $box-shadow;
+        border-radius: 5px;
+    }
+}
