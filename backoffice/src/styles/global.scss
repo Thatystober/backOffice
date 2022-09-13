@@ -81,6 +81,16 @@ body{
         h1{
             margin-bottom:2rem;
         }
+
+        .box-content{
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+
+            display:flex;
+            justify-content:center;
+            align-items: center;
+        }
     }
 }
 
