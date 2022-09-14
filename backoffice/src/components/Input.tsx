@@ -3,17 +3,19 @@ import '../styles/input.scss';
 
 type input = InputHTMLAttributes<HTMLButtonElement>;
 type label = {
-    name: string
+    label: string,
+    error?: string,
+    name: any
 };
 
 type Props = input & label;
 
 export default function Input(props:Props) {
-    // const [formState, setFormState] = useState({input:""});
     return (
         <div id="inputComponent">
-            <label htmlFor={props.name}></label>
-            <input className="input" type={props.type} placeholder={props.placeholder} required={props.required}/>
+            <label htmlFor={props.label}></label>
+            <input className="input" type={props.type} placeholder={props.placeholder} required={props.required} name={props.name} />
+            {props.error && <div>{props.error}</div>} 
         </div>
     );
 }
