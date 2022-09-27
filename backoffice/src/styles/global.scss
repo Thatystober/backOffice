@@ -91,8 +91,28 @@ body{
             justify-content:center;
             align-items: center;
         }
+
+        input{
+            padding: .3rem 0;
+            color: $text-color;
+            margin-bottom: 1.2rem;
+            border: none;
+            border-bottom: 1px solid $border-color;
+            outline: none;
+            background: transparent;
+            transition: .5s;
+    
+            width: 100%;
+    
+            &:focus,
+            &:focus-visible{
+                border-color: $primary-color;
+            }
+        }
     }
 }
+
+
 
 
 
