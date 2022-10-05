@@ -6,7 +6,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 import '../server';
 
-import { SetStateAction, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 interface IFormInputs {
     email: string,
@@ -40,7 +40,7 @@ export default function Register(){
     const { register, handleSubmit, formState: { errors } } = useForm<IFormInputs>({
         resolver: yupResolver(validationSchema)
     });
-
+    
     const [email, setEmail] = useState<string>("");
     const [name, setName] = useState<string>("");
     const [password, setPassword] = useState<string>();
@@ -55,13 +55,8 @@ export default function Register(){
             .catch(err => console.log(err))
     }, []);
 
-    const onSubmitHandle = handleSubmit((data) => {
-       console.log(data)
-    });
 
-
-    const onSubmit = async (event: { preventDefault: () => void; }) => {
-        onSubmitHandle;
+    const mockUser = async (event: { preventDefault: () => void; }) => {
         event.preventDefault();
 
         try{
@@ -73,17 +68,29 @@ export default function Register(){
             setName("")
             setPassword("")
             setConfirmPassword("")
+
+            console.log(users)
         } catch (err) {
             console.log(err);
         }
     }
 
+    let onSubmitValidation = () => {
+        if(validationSchema){
+            handleSubmit((data) =>{console.log(data)})
+        }else{
+            mockUser
+        }
+    }
+
+    
     return (
+       
         <main className="container">
             <div className="box-content">
                 <Box>
                     <h1>Registre uma Conta</h1>
-                    <form action="" onSubmit={onSubmit}>
+                    <form action="" onSubmit={onSubmitValidation}>
                         <input type="email" {...register('email')} placeholder="email@email.com" value={email}
                             onChange ={e => setEmail(e.target.value)}
                         />

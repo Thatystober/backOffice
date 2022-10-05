@@ -11,7 +11,12 @@ createServer({
       let attrs = JSON.parse(request.requestBody)
       users.push(attrs)
 
-      return schema.create('users', attrs)
+      console.log(attrs);
+      console.log(request);
+
+      // return schema.create('users', attrs)
+      return {user: attrs}
+    
     })
 
     this.get("/users", () => {
